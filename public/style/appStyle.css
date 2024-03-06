@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+header {
+    margin: 2% 10% 25px 10%;
+}
+
+header h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+header p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 45px 0 25px 0;
+    font-size: 14px;
+}
+
+header hr {
+    /* Style Here */
+}
+
+main {
+    margin: 0 10%;
+}
+
+main .section-01 {
+    position: relative;
+    height: 32px;
+}
+
+main .section-01 h2 {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 26px;
+    height: 32px;
+}
+
+main .section-01 .figure-01 {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    height: 32px;
+}
+
+main .section-01 .figure-01 input {
+    outline: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid black;
+    border-radius: 6px 0 0 6px;
+    padding: 0 10px;
+    height: 30px;
+    width: 250px;
+}
+
+main .section-01 .figure-01 a {
+    background-color: black;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 0 6px 6px 0;
+    font-size: 14px;
+    height: 32px;
+    width: 50px; 
+} 
+
+main .section-01 .figure-01 a:active {
+    background-color: rgb(44, 44, 44);
+}
+
+main .section-02 {
+    margin-top: 10px;
+}
+
+main .section-02 table .table-data-01 {
+    width: 25%;
+}
+
+main .section-02 table .table-data-02 {
+    width: 40%;
+}
+
+main .section-02 table .table-data-03 {
+    width: 35%;
+}
+
+main .section-02 .figure-01 {
+    /* Style Here */
+}
+
+main .section-02 .figure-01 .table-01 {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+main .section-02 .figure-01 .table-01 th {
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(231, 231, 231);
+    font-weight: 400;
+    font-size: 15px;
+    height: 50px;
+    padding-left: 20px;
+}
+
+main .section-02 .figure-02 {
+    overflow: auto;
+    border: 1px solid rgb(231, 231, 231);
+    height: 550px;
+}
+
+main .section-02 .figure-02 .table-01 {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+main .section-02 .figure-02 .table-01 td {
+    position: relative;
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: 1px solid rgb(231, 231, 231);
+    font-weight: 700;
+    font-size: 15px;
+    height: 50px;
+    padding-left: 20px;
+}
+
+main .section-02 .figure-02 .table-01 td .button-container {
+    display: inline-block;
+    position: absolute;
+    transition: opacity 0.6s;
+    opacity: 0;
+    right: 0px;
+    top: 10px;
+    margin-right: 10px;
+}
+
+/* JS Activation */
+main .section-02 .figure-02 .table-01 td .onMouse {
+    opacity: 1;
+}
+
+/* JS Activation */
+main .section-02 .figure-02 .table-01 td .onClick {
+    opacity: 1;
+}
+
+
+main .section-02 .figure-02 .table-01 td .button-01 {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 14px;
+    height: 30px;
+    width: 55px;
+}
+
+main .section-02 .figure-02 .table-01 td .button-01:active {
+    background-color: rgb(44, 44, 44);
+}
+
+main .section-02 .figure-02 .table-01 td a {
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    height: 28px;
+    width: 53px;
+}
+
+main .section-02 .figure-02 .table-01 td a:active {
+    background-color: rgb(248, 248, 248);
+}
+
+footer {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 25px 10% 0 10%;
+    font-size: 14px;
+}

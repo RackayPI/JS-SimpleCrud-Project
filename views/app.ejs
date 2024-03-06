@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD-Project</title>
+    <link rel="stylesheet" href="./style/appStyle.css">
+</head>
+<body>
+    <header>
+        <h1>Customers</h1>
+
+        <p>Account Manager, here are all our customers. Please use this page to view or update your clients details.</p>
+        <hr/>
+    </header>
+
+    <main>
+        <section class="section-01">
+            <h2>Customers</h2>
+
+            <figure class="figure-01">
+                <input id="searchBar" type="text" placeholder="Search"/>
+                <a href="/form">New</a>
+            </figure>
+        </section>
+
+        <section class="section-02">
+            <figure class="figure-01">
+                <table class="table-01">
+                    <tr class="header-row-01">
+                        <th class="table-data-01">Company Name</th>
+                        <th class="table-data-02">Billing Email</th>
+                        <th class="table-data-03">Signup Date</th>
+                    </tr>
+                </table>
+            </figure>
+            
+            <figure class="figure-02">
+                <table class="table-01">
+                    <!-- JS Will Generate The Element -->
+                </table>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <p>Note: If you need their billing information, feel free to check with Amelia, who have access to more data.</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./engine/fe_engine.js"></script>
+    <script type="module" src="./engine/engine.js"></script>
+</body>
+</html>

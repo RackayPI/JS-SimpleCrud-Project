@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-Page</title>
+    <link rel="stylesheet" href="./style/formPageStyle.css">
+</head>
+<body>
+    <header>
+        <h1>Contact Form</h1>
+
+        <p>Data collection is very important to make it easier to contact clients</p>
+        <hr/>
+    </header>
+
+    <main>
+        <section class="section-01">
+            <h2>Contact</h2>
+        </section>
+        
+        <section class="section-02">
+            <figure class="figure-01">
+                <input type="text" id="userName">
+                <input type="email" id="emailAddress">
+            </figure>
+
+            <figure class="figure-02">
+                <label for="userName">UserName</label>
+                <label for="emailAddress">Email Address</label>
+            </figure>
+
+            <figure class="figure-03">
+                <input type="date" id="registrationDate">
+                <label for="registrationDate">Registration Date</label>
+            </figure>
+
+            <figure class="figure-04">
+                <p>Your Data Is Invalid!</p>
+            </figure>
+
+            <figure class="figure-05">
+                <a id="saveButton">Save</a>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <p>Note: If you have problem, feel free to call Amelia, who handles any issue.</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="module" src="./engine/engine.js"></script>
+</body>
+</html>
