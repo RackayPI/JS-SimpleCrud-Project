@@ -1,5 +1,6 @@
 import {generatorElement} from "./generatorElement_method.js";
 
+// Sending ID Of Specific Data (.editButton Activate)
 $("main .section-02 .figure-02 .table-01").on("click", ".editButton", function (event) {
     const data = {
         id: $(event.target).closest("tr").attr("id"),
@@ -14,6 +15,7 @@ $("main .section-02 .figure-02 .table-01").on("click", ".editButton", function (
     });
 });
 
+// Sending Command For New Data (a[value = "New"] Activate)
 $("main .section-01 .figure-01 a").on("click", function (event) {
     const data = {
         id: "new"
@@ -28,13 +30,13 @@ $("main .section-01 .figure-01 a").on("click", function (event) {
     });
 });
 
-// Under Construction
+// Sending Keyword For Search Data (#searchBar Activate)
 $("#searchBar").keyup(function (event) { 
     const data = {
-        key: $("#searchBar").val()
+        key: $("#searchBar").val().replace(/\s+/g, " ").trim(),
     }
 
-    fetch("/display", {
+    fetch("/search", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -42,11 +44,17 @@ $("#searchBar").keyup(function (event) {
         body: JSON.stringify(data)
     })
     .then((res) => res.json())
-    .then((obj) => {
-        generatorElement(obj);
+    .then((content) => {
+        generatorElement(content);
     });
 });
 
+// Trimming White Space For Search Bar Value
+$("#searchBar").focusout(function (event) { 
+    $(this).val($(this).val().replace(/\s+/g, " ").trim());
+});
+
+// Sending Command ID For Delete a Specific Data (.deleteButton Activate)
 $("main .section-02 .figure-02 .table-01").on("click", ".deleteButton", function (event) {
     const data = {
         id: $(event.target).closest("tr").attr("id"),
@@ -63,10 +71,11 @@ $("main .section-02 .figure-02 .table-01").on("click", ".deleteButton", function
     window.location.reload();
 });
 
+// Saving Data (#saveButton Activate)
 $("#saveButton").on("click", function (event) {
     const data = {
-        userName: $("#userName").val(),
-        email: $("#emailAddress").val().toLowerCase(),
+        name: $("#userName").val().replace(/\s+/g, " ").trim(),
+        email: $("#emailAddress").val().toLowerCase().replace(/\s+/g, ""),
         regDate: $("#registrationDate").val()
     }
 
@@ -91,24 +100,25 @@ $("#saveButton").on("click", function (event) {
     $("#saveButton").off("click");
 });
 
+// Trimming White Space For (#userName) Value
+$("#userName").focusout(function (event) { 
+    $(this).val($(this).val().replace(/\s+/g, " ").trim());
+});
+
+// Trimming White Space For (#userName) Value
+$("#emailAddress").focusout(function (event) { 
+    $(this).val($(this).val().replace(/\s+/g, ""));
+});
+
+// Displaying All Data
 $(document).ready(function (event) {
-    if(window.location.pathname === "/form") {
-        fetch("/form", {
-            method: "POST"
-        })
-        .then((res) => res.json())
-        .then((data) => {
-            $("#userName").val(data.userName);
-            $("#emailAddress").val(data.email);
-            $("#registrationDate").val(data.regDate);
-        });
-    } else if(window.location.pathname === "/") {
+    if(window.location.pathname === "/") {
         fetch("/", {
             method: "POST"
         })
         .then((res) => res.json())
-        .then((obj) => {
-            generatorElement(obj);
+        .then((content) => {
+            generatorElement(content);
         });
     }
 });

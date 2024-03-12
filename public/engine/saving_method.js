@@ -1,13 +1,19 @@
 import fs from 'node:fs';
 
-function saving(object, assetId) {
+function saving(content, assetId) {
     const data = JSON.parse(fs.readFileSync("./db.txt"));
-    const count = Object.getOwnPropertyNames(data).length;
 
     if(assetId === "new") {
-        data[count + 1] = object;
+        data.push({
+            id: (data.length + 1).toString(),
+            name: content.name,
+            email: content.email,
+            regDate: content.regDate
+        });
     } else {
-        data[assetId] = object;
+        data[assetId].name = content.name;
+        data[assetId].email = content.email;
+        data[assetId].regDate = content.regDate;
     }
 
     fs.writeFileSync("./db.txt", JSON.stringify(data));

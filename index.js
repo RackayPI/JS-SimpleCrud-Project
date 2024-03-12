@@ -14,39 +14,40 @@ const port = 3000;
 app.use(express.static("./public"));
 app.use(bodyParser.json());
 
+// Render The (app.ejs File)
 app.get("/", (req, res) => {
     res.render("./app.ejs");
 });
 
+// Display The All Data
 app.post("/", (req, res) => {
     res.json(display());
 });
 
-app.post("/display", (req, res) => {
+// Display The Specific Data
+app.post("/search", (req, res) => {
     res.json(display(req.body.key));
 });
 
+// Adding ID Of Specific Data To Asset[1]
 app.post("/asset01", (req, res) => {
     asset[1] = req.body.id;
 });
 
+// Deleting a Specific Data
 app.delete("/deleting", (req, res) => {
     deleting(req.body.id);
 });
 
+// Render The (from.ejs File)
 app.get("/form", (req, res) => {
-    res.render("./form.ejs");
-});
-
-// Under Construction 
-app.post("/form", (req, res) => {
     const data = JSON.parse(fs.readFileSync("./db.txt"));
+    const message = data.find((value) => value.id === asset[1]);
 
-    if(asset[1] !== "new") {
-        res.json(data[asset[1]]);
-    } 
+    res.render("./form.ejs", message);
 });
 
+// Saving Data (db.txt)
 app.post("/saving", (req, res) => {
     const data = {
         condition: false,

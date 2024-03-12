@@ -21,8 +21,8 @@
         
         <section class="section-02">
             <figure class="figure-01">
-                <input type="text" id="userName">
-                <input type="email" id="emailAddress">
+                <input type="text" id="userName" value="<%= locals.name %>">
+                <input type="email" id="emailAddress" value="<%= locals.email %>">
             </figure>
 
             <figure class="figure-02">
@@ -31,7 +31,7 @@
             </figure>
 
             <figure class="figure-03">
-                <input type="date" id="registrationDate">
+                <input type="date" id="registrationDate" value="<%= locals.regDate %>">
                 <label for="registrationDate">Registration Date</label>
             </figure>
 
