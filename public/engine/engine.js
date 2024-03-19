@@ -93,11 +93,10 @@ $("#saveButton").on("click", function (event) {
         } else {
             $("main .section-02 .figure-04").removeClass("on");
 
+            $("#saveButton").off("click");
             window.location.href = "/";
         }
     });
-
-    $("#saveButton").off("click");
 });
 
 // Trimming White Space For (#userName) Value
